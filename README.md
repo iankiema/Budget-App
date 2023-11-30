@@ -71,7 +71,7 @@
 
 ## 🎥 Presentation Video <a name="presentation-video"></a>
 
-- [Presentation Video Link]()
+- [Presentation Video Link](https://www.loom.com/share/19778c6fe59f495ab016b8209215bd8f?sid=720b438c-56be-4546-982d-7979876f19fb)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
