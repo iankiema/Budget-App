@@ -1,15 +1,345 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
+ *= require font-awesome
  */
+
+:root {
+    --primary-color: #3778c2;
+    --secondary-color: #5fb523;
+    --primary-text-color: #434b54;
+    --background-color: #d3d3d3;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.category_page, 
+.expenditure_page, 
+.new_category_page, 
+.new_expenditure_page, 
+.splash_page,
+.login_page,
+.sign_up_page {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: var(--background-color);
+}
+
+.login_page,
+.sign_up_page {
+    height: 100vh;
+    background-color: whitesmoke;
+    margin-bottom: 0;
+}
+
+.splash_page {
+    height: 100vh;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    color: var(--primary-text-color);
+    font-size: 30px;
+}
+
+.splash_page h1 {
+    margin: 0;
+    margin-top: 40%;
+}
+
+.splash_sign_in {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10vh;
+    margin-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.splash_sign_in a {
+    text-decoration: none;
+    height: 15vh;
+    width: 97%;
+    color: var(--primary-text-color);
+    margin: auto;
+    padding: 10px;
+}
+
+.splash_sign_in a:hover {
+   background-color: var(--primary-color);
+   color: white;
+}
+
+.category_navbar, 
+.expenditure_navbar, 
+.new_category_navbar, 
+.new_expenditure_navbar,
+.login_navbar,
+.sign_up_navbar {
+    width: 100%;
+    height: 20vh;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.login_navbar,
+.sign_up_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenditure_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_category_navbar {
+    display: flex;
+    align-items: center;
+}
+
+.new_expenditure_navbar {
+    display: flex;
+    align-items: center;
+}
+
+.login_navbar a,
+.sign_up_navbar a {
+    padding-left: 20px;
+}
+
+
+
+.new_category_navbar a, 
+.new_expenditure_navbar a {
+    text-align: right;
+    padding-left: 20px;
+}
+
+.new_category_navbar h1, 
+.new_expenditure_navbar h1 {
+    padding-left: 200px;
+}
+
+.expenditure_navbar a {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.expenditure_navbar p {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.category_navbar h1, 
+.expenditure_navbar h1, 
+.new_category_navbar h1 {
+    margin: 0;
+    line-height: 100px;
+}
+
+.category_card, 
+.expenditure_card {
+    max-width: 90%;
+    max-height: 100px;
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.expenditure_card {
+    align-items: center;
+}
+
+.expenditure_card p {
+    margin-left: auto;
+}
+
+.category_card h2 {
+    color: var(--primary-text-color);
+}
+
+.category_icon {
+    max-width: 20%;
+    overflow: hidden;
+}
+
+.icon_info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.info_detail {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.info_detail h2, p {
+    margin: 0;
+}
+
+.info_detail p {
+    margin-left: auto;
+}
+
+.info_view {
+    display: flex;
+}
+
+.view_expend {
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.category_new, 
+.expenditure_new, 
+.new_category_submit, 
+.new_expenditure_submit {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color: var(--secondary-color);
+    text-align: center;
+    align-items: center;
+}
+
+.add_category {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border: 2px solid white;
+}
+
+.category_new a, 
+.expenditure_new a, 
+.submit_form {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    line-height: 70px;
+    font-size: 30px;
+}
+
+.submit_form {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.new_category_info, 
+.new_expenditure_info,
+.new_sign_in_info,
+.new_sign_up_info {
+    width: 95%;
+    border: none;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.new_sign_in_info,
+.new_sign_up_info {
+    width: 98%;
+    margin-left: 3px;
+    margin-right: 1px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+}
+
+.fa-solid {
+    font-size: 30px;
+}
+
+.forgot_info_div {
+    width: 100%;
+    text-align: center;
+}
+
+.forgot_info {
+    width: 100%;
+    text-decoration: none;
+    margin: auto;
+    color: var(--primary-text-color);
+}
+
+.login_link,
+.signup_link {
+    background-color: transparent;
+    padding-right: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .category_page,
+    .expenditure_page,
+    .new_category_page,
+    .new_expenditure_page {
+      width: 100%;
+    }
+  
+    .category_card,
+    .expenditure_card {
+      max-width: 100%;
+    }
+  
+    .new_category_navbar h1,
+    .new_expenditure_navbar h1 {
+      padding-left: 0;
+    }
+  
+    .new_category_navbar a,
+    .new_expenditure_navbar a {
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .new_category_info,
+    .new_expenditure_info {
+      width: 100%;
+    }
+  
+    .info_detail {
+      width: 100%;
+    }
+  
+    .info_detail h2,
+    p {
+      width: 100%;
+    }
+  
+    .info_view {
+      width: 100%;
+    }
+  }
+
