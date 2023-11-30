@@ -1,0 +1,13 @@
+<div class="container">
+  <% if user_signed_in? %>
+    <% redirect_to categories_path %>
+  <% else %>
+    <div class="splash_page">
+      <h1>Budget Track</h1>
+      <div class = "splash_sign_in">
+        <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-outline-success' %>
+        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-outline-primary mr-2' %> 
+      </div>
+    </div>
+  <% end %>
+</div>

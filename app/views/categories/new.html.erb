@@ -1,0 +1,12 @@
+<div class = "new_category_page">
+    <div class = "new_category_navbar">
+        
+        <%= link_to categories_path do %>
+         <%= fa_icon 'arrow-left', class: 'fa-solid', style: 'color: #ffffff;' %>
+        <% end %>
+
+        <h1>New Category</h1>
+    </div>
+    <%= render 'form', category: @category %>
+</div>
+
