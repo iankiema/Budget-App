@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories do
-    resources :expenditures, only: [:index, :new, :create, :destroy]
+    resources :expenditures
   end
 end

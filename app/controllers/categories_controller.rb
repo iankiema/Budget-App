@@ -10,6 +10,10 @@ class CategoriesController < ApplicationController
     @expenditures = @category.expenditures.order(created_at: :desc)
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
   def new
     @category = current_user.categories.build
   end
@@ -20,6 +24,15 @@ class CategoriesController < ApplicationController
       redirect_to categories_path, notice: 'Category created successfully.'
     else
       render :new
+    end
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to categories_path, notice: 'Category updated successfully.'
+    else
+      render :edit
     end
   end
 

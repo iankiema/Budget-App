@@ -12,6 +12,8 @@
     <div class = "expenditure_card">
       <h2><%= expenditure.name %></h2>
       <p>Amount: <%= expenditure.amount %></p>
+      <%= link_to 'Edit', edit_category_expenditure_path(@category, expenditure), class: 'edit_button' %> |
+      <%= button_to 'Delete', category_expenditure_path(@category, expenditure), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy_button' %>
     </div>
   <% end %>
 

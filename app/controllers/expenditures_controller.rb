@@ -1,7 +1,7 @@
 class ExpendituresController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category
-  # before_action :set_categories, only: %i[new create edit update]
+  before_action :set_categories, only: %i[new create edit update]
 
   def index
     @category = Category.find(params[:category_id])
@@ -14,7 +14,6 @@ class ExpendituresController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:category_id])
     @expenditure = Expenditure.find(params[:id])
   end
 
@@ -32,7 +31,7 @@ class ExpendituresController < ApplicationController
   def update
     @expenditure = Expenditure.find(params[:id])
     if @expenditure.update(expenditure_params)
-      redirect_to category_expenditure_path(expenditure_params[:category_id]),
+      redirect_to category_expenditures_path(@category),
                   notice: 'Expenditure was successfully updated.'
     else
       render :edit

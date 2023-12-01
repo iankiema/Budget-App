@@ -1,0 +1,13 @@
+<!-- views/expenditures/edit.html.erb -->
+<div class="edit_category_page">
+    <div class="edit_category_navbar">
+        <%= link_to category_expenditures_path(@expenditure.category) do %>
+             <%= fa_icon 'arrow-left', class: 'fa-solid', style: 'color: #ffffff;' %>
+        <% end %>
+        <h1>Edit Expenditure</h1>
+    </div>
+
+    <%= render 'form', expenditure: @expenditure %>
+</div>
+
+
