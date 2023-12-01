@@ -1,0 +1,35 @@
+<div class = "category_page">
+  <div class = "category_navbar">
+      <h1>Categories</h1>
+      <%= button_to destroy_user_session_path, method: :delete, class: "icon text-end logout-btn" do %>
+        <i class="fa fa-user"></i> Logout
+      <% end %>
+  </div>
+ 
+
+  <% @categories.each do |category| %>
+    <div class = "category_card">
+      <div class = "category_icon">
+        <%= image_tag category.icon, alt: "Category Icon"%>
+      </div>
+      <div class = "icon_info">
+        <div class = "info_detail">
+          <h2><%= category.name %></h2>
+          <p>Total Amount: <%= category.expenditures.sum(:amount) %></p>
+        </div>
+        <div class = "info_view">
+          <%= category.created_at.strftime('%B %d, %Y') %>
+          <%= link_to 'View Expenditures', category_expenditures_path(category), class: "view_expend" %>
+          <%= link_to 'Edit', edit_category_path(category), class: "edit_button" %>
+          <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy_button" %>
+        </div>
+      </div>
+      
+    </div>
+  <% end %>
+  <div class = "category_new">
+      <%= link_to 'Add a new category', new_category_path %>
+  </div>
+  
+</div>
+

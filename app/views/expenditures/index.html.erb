@@ -1,0 +1,27 @@
+<div class = "expenditure_page">
+  <div class = expenditure_navbar>
+     <%= link_to categories_path do %>
+        <%= fa_icon 'arrow-left', class: 'fa-solid', style: 'color: #ffffff;' %>
+      <% end %>
+    <h1><%= @category.name %> Expenditures</h1>
+    <p>Total Amount: <%= @expenditures.sum(:amount) %></p>
+  </div>
+  
+  
+  <% @expenditures.each do |expenditure| %>
+    <div class = "expenditure_card">
+      <h2><%= expenditure.name %></h2>
+      <p>Amount: <%= expenditure.amount %></p>
+      <%= link_to 'Edit', edit_category_expenditure_path(@category, expenditure), class: 'edit_button' %> |
+      <%= button_to 'Delete', category_expenditure_path(@category, expenditure), method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy_button' %>
+    </div>
+  <% end %>
+
+  <div class = "expenditure_new">
+    <%= link_to 'Add a new expenditure', new_category_expenditure_path(@category) %>
+  </div>
+  
+  
+</div>
+
+

@@ -1,0 +1,32 @@
+<%= form_with(model:[@category, expenditure], local: true) do |form| %>
+  <% if expenditure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expenditure.errors.count, 'error') %> prohibited this expenditure from being saved:</h2>
+
+      <ul>
+        <% expenditure.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "new_expenditure_info" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "new_expenditure_info" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, @categories, :id, :name, class: "new_expenditure_info" %>
+  </div>
+
+  <div class="actions new_expenditure_submit">
+    <%= form.submit class: "submit_form" %>
+  </div>
+<% end %>
