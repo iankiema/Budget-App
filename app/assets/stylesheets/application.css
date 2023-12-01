@@ -9,6 +9,11 @@
   --background-color: #d3d3d3;
 }
 
+html {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -18,6 +23,7 @@ body {
 .category_page,
 .expenditure_page,
 .new_category_page,
+.edit_category_page,
 .new_expenditure_page,
 .splash_page,
 .login_page,
@@ -31,6 +37,10 @@ body {
   background-color: var(--background-color);
 }
 
+.field {
+  padding: 10px;
+}
+
 .login_page,
 .sign_up_page {
   height: 100vh;
@@ -40,6 +50,8 @@ body {
 
 .splash_page {
   height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
@@ -73,6 +85,7 @@ body {
 }
 
 .new_category_navbar a,
+.edit_category_navbar a,
 .new_expenditure_navbar a {
   text-align: right;
   padding-left: 20px;
@@ -114,6 +127,7 @@ body {
 .category_navbar,
 .expenditure_navbar,
 .new_category_navbar,
+.edit_category_navbar,
 .new_expenditure_navbar,
 .login_navbar,
 .sign_up_navbar {
@@ -137,7 +151,8 @@ body {
   align-items: center;
 }
 
-.new_category_navbar {
+.new_category_navbar,
+.edit_category_navbar {
   display: flex;
   align-items: center;
 }
@@ -148,8 +163,9 @@ body {
 }
 
 .new_category_navbar h1,
-.new_expenditure_navbar h1 {
-  padding-left: 200px;
+.new_expenditure_navbar h1,
+.edit_category_navbar h1 {
+  padding-left: 30%;
 }
 
 .expenditure_navbar p {
@@ -167,7 +183,7 @@ body {
 .category_card,
 .expenditure_card {
   max-width: 90%;
-  max-height: 100px;
+  min-height: 100px;
   display: flex;
   padding: 20px;
   margin: 20px;
@@ -190,6 +206,9 @@ body {
 
 .category_icon {
   max-width: 20%;
+  max-height: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
   overflow: hidden;
 }
 
@@ -215,11 +234,36 @@ body {
 
 .info_view {
   display: flex;
+  padding-bottom: 20px;
+}
+
+.view_expend,
+.edit_button,
+.destroy_button {
+  margin-left: auto;
+  text-decoration: none;
 }
 
 .view_expend {
-  margin-left: auto;
-  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.edit_button {
+  padding-right: 10px;
+}
+
+.destroy_button {
+  background-color: #d11a2a;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.destroy_button:hover {
+  opacity: 0.8;
 }
 
 .category_new,
@@ -298,6 +342,13 @@ body {
   font-size: 15px;
 }
 
+.notice,
+.alert {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+
 @media screen and (max-width: 768px) {
   .category_page,
   .expenditure_page,
@@ -317,6 +368,7 @@ body {
   }
 
   .new_category_navbar a,
+  .edit_category_navbar a,
   .new_expenditure_navbar a {
     text-align: center;
     padding-left: 0;
